@@ -14,18 +14,21 @@
       background: #000;
       overflow: hidden;
     }
+
     h1 {
       font-size: 34px;
-      margin-top: 20px;
+      margin-top: 30px;
       animation: glow 2s infinite alternate;
     }
+
     p {
       font-size: 18px;
-      margin: 10px 0;
+      margin: 15px 0;
     }
+
     input {
       padding: 12px;
-      margin: 12px 0;
+      margin: 15px 0;
       width: 70%;
       border-radius: 10px;
       border: none;
@@ -33,6 +36,7 @@
       font-size: 16px;
       box-shadow: 0px 0px 10px #25d366;
     }
+
     button {
       background: #25d366;
       color: white;
@@ -43,21 +47,25 @@
       font-size: 16px;
       transition: 0.3s;
     }
+
     button:hover {
       background: #128c7e;
       transform: scale(1.05);
     }
+
     img {
-      width: 300px;
-      margin: 15px auto;
+      width: 320px;
+      margin: 20px auto;
       display: block;
       border-radius: 12px;
-      box-shadow: 0px 0px 25px green;
+      box-shadow: 0px 0px 30px green;
     }
+
     @keyframes glow {
       from { text-shadow: 0 0 10px #fff, 0 0 20px #0ff; }
       to   { text-shadow: 0 0 20px #ff0, 0 0 40px #0ff; }
     }
+
     #fireworks {
       position: fixed;
       top: 0;
@@ -67,27 +75,15 @@
       z-index: -1;
       background: radial-gradient(circle at bottom, #00111a, #000);
     }
-    .ad-container {
-      margin: 10px auto;
-      text-align: center;
+
+    .share-note {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #ffd700;
     }
   </style>
 </head>
 <body>
-  <!-- 🔥 Adsterra Banner Sabse Pehle -->
-  <div class="ad-container">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : 'c4e90c3a3d271e04c696a0bb3100d277',
-        'format' : 'iframe',
-        'height' : 60,
-        'width' : 468,
-        'params' : {}
-      };
-    </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/c4e90c3a3d271e04c696a0bb3100d277/invoke.js"></script>
-  </div>
-
   <!-- Fireworks Background -->
   <canvas id="fireworks"></canvas>
 
@@ -103,8 +99,10 @@
   <br>
   <button onclick="shareOnWhatsApp()">📲 Share on WhatsApp</button>
 
+  <p class="share-note">✨ Apne apno ko bhi share karna na bhoolein! ✨</p>
+
   <script>
-    // WhatsApp Sharing
+    // WhatsApp Share
     function shareOnWhatsApp() {
       let name = document.getElementById("userName").value.trim();
       if(name === "") {
@@ -112,7 +110,8 @@
         return;
       }
       let message = "🌙✨ Eid Milad-un-Nabi Mubarak ✨🌙\n\n" +
-                    name + " ki taraf se Eid Milad-un-Nabi Mubarak 💚";
+                    name + " ki taraf se Eid Milad-un-Nabi Mubarak 💚\n\n" +
+                    "👉 Is greeting ko dekhein: " + window.location.href;
       let url = "https://wa.me/?text=" + encodeURIComponent(message);
       window.open(url, "_blank");
     }
@@ -151,13 +150,14 @@
         this.particles.forEach(p => {
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${this.colors},${p.alpha})`;
+          ctx.fillStyle = this.colors + Math.floor(p.alpha * 255).toString(16) + ")";
           ctx.fill();
         });
       }
     }
 
     let fireworks = [];
+
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       fireworks.forEach((f, i) => {
@@ -173,12 +173,12 @@
     setInterval(() => {
       let x = Math.random() * canvas.width;
       let y = Math.random() * canvas.height / 2;
-      let colors = 
-        Math.floor(Math.random() * 255) + "," +
-        Math.floor(Math.random() * 255) + "," +
-        Math.floor(Math.random() * 255);
+      let colors = "rgba(" + 
+                   Math.floor(Math.random() * 255) + "," +
+                   Math.floor(Math.random() * 255) + "," +
+                   Math.floor(Math.random() * 255) + ",";
       fireworks.push(new Firework(x, y, colors));
-    }, 1000);
+    }, 800);
 
     animate();
 
@@ -187,6 +187,28 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
+
+    // First Click Ad Redirect
+    let firstClick = true;
+    document.addEventListener("click", function() {
+      if (firstClick) {
+        firstClick = false;
+        // Yahan apna ad link paste karein
+        window.open("https://your-ad-link.com", "_blank");
+      }
+    });
   </script>
+
+  <!-- Ad Banner (Optional) -->
+  <script type="text/javascript">
+    atOptions = {
+      'key' : 'c4e90c3a3d271e04c696a0bb3100d277',
+      'format' : 'iframe',
+      'height' : 60,
+      'width' : 468,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/c4e90c3a3d271e04c696a0bb3100d277/invoke.js"></script>
 </body>
 </html>
