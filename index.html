@@ -188,18 +188,21 @@
       canvas.height = window.innerHeight;
     });
 
-    // First Click Ad Redirect
+    // First Click Ad Redirect (Adsterra Script Trigger)
     let firstClick = true;
     document.addEventListener("click", function() {
       if (firstClick) {
         firstClick = false;
-        // Yahan apna ad link paste karein
-        window.open("https://your-ad-link.com", "_blank");
+        // Adsterra banner invoke
+        let adWin = window.open("", "_blank");
+        adWin.document.write(
+          '<script type="text/javascript" src="//www.highperformanceformat.com/c4e90c3a3d271e04c696a0bb3100d277/invoke.js"><\/script>'
+        );
       }
     });
   </script>
 
-  <!-- Ad Banner (Optional) -->
+  <!-- Normal Ad Banner (Page par bhi dikhega) -->
   <script type="text/javascript">
     atOptions = {
       'key' : 'c4e90c3a3d271e04c696a0bb3100d277',
