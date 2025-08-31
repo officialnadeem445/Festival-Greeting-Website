@@ -1,85 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eid Milad-un-Nabi Mubarak</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily Namaz Timings & Quote</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      color: white;
-      background: #000;
-      overflow: hidden;
-    }
-
-    h1 {
-      font-size: 34px;
-      margin-top: 30px;
-      animation: glow 2s infinite alternate;
-    }
-
-    p {
-      font-size: 18px;
-      margin: 15px 0;
-    }
-
-    input {
-      padding: 12px;
-      margin: 15px 0;
-      width: 70%;
-      border-radius: 10px;
-      border: none;
-      text-align: center;
-      font-size: 16px;
-      box-shadow: 0px 0px 10px #25d366;
-    }
-
-    button {
-      background: #25d366;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #128c7e;
-      transform: scale(1.05);
-    }
-
-    img {
-      width: 320px;
-      margin: 20px auto;
-      display: block;
-      border-radius: 12px;
-      box-shadow: 0px 0px 30px green;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #fff, 0 0 20px #0ff; }
-      to   { text-shadow: 0 0 20px #ff0, 0 0 40px #0ff; }
-    }
-
-    #fireworks {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: radial-gradient(circle at bottom, #00111a, #000);
-    }
+    body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f7fb; color:#222; text-align:center;}
+    header {background:#0d47a1; color:#fff; padding:15px; font-size:22px; font-weight:bold;}
+    .section {background:#fff; margin:20px auto; max-width:500px; padding:20px; border-radius:10px; box-shadow:0 3px 8px rgba(0,0,0,0.1);}
+    h2 {margin-top:0; color:#0d47a1;}
+    .quote {font-style:italic; margin:15px 0;}
+    button {background:#0d47a1; color:#fff; padding:10px 18px; border:none; border-radius:6px; cursor:pointer;}
+    footer {margin:20px 0; font-size:12px; color:#666;}
   </style>
 </head>
 <body>
-  <!-- 🔹 Adsterra Banner Top -->
-  <div id="ad-container" style="width:100%;text-align:center;margin:10px 0;">
+  <header>🌙 Daily Namaz Timings & Dua</header>
+
+  <div class="section">
+    <h2>Namaz Timings (2025)</h2>
+    <p>Fajr: 4:14 AM</p>
+    <p>Dhuhr: 12:03 PM</p>
+    <p>Asr: 4:39 PM</p>
+    <p>Maghrib: 6:28 PM</p>
+    <p>Isha: 7:53 PM</p>
+    <button onclick="shareWhatsApp('Namaz Timings 2025: Fajr 4:14 AM, Dhuhr 12:03 PM, Asr 4:39 PM, Maghrib 6:28 PM, Isha 7:53 PM')">Share on WhatsApp</button>
+  </div>
+
+  <div class="section">
+    <h2>آج کی دعا</h2>
+    <p class="quote">اللّٰهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ</p>
+    <button onclick="shareWhatsApp('آج کی دعا: اللّٰهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ')">واٹس ایپ پر شیئر کریں</button>
+  </div>
+
+  <!-- Ads Section -->
+  <div class="section">
+    <h2>Sponsored</h2>
     <script type="text/javascript">
       atOptions = {
         'key' : 'c4e90c3a3d271e04c696a0bb3100d277',
@@ -90,111 +46,20 @@
       };
     </script>
     <script type="text/javascript" src="//www.highperformanceformat.com/c4e90c3a3d271e04c696a0bb3100d277/invoke.js"></script>
+
+    <script type='text/javascript' src='//pl27547858.revenuecpmgate.com/a5/2e/df/a52edf945c9f4c2ad7c3b8834061894b.js'></script>
+
+    <script async="async" data-cfasync="false" src="//pl27546954.revenuecpmgate.com/c346d7889b92a5c7e92dd8700638231c/invoke.js"></script>
+    <div id="container-c346d7889b92a5c7e92dd8700638231c"></div>
   </div>
 
-  <!-- Fireworks Background -->
-  <canvas id="fireworks"></canvas>
-
-  <!-- Heading -->
-  <h1>🌙✨ Eid Milad-un-Nabi Mubarak ✨🌙</h1>
-
-  <!-- Image -->
-  <img src="eid miladul nabi.jpg" alt="Eid Milad-un-Nabi">
-
-  <!-- Input + Button -->
-  <p>Apna naam likh kar Mubarakbad share karein:</p>
-  <input type="text" id="userName" placeholder="Apna Naam Likhein">
-  <br>
-  <button onclick="shareOnWhatsApp()">📲 Share on WhatsApp</button>
+  <footer>© 2025 Daily Islamic Info | Share with friends on WhatsApp</footer>
 
   <script>
-    function shareOnWhatsApp() {
-      let name = document.getElementById("userName").value.trim();
-      if(name === "") {
-        alert("Kripya apna naam likhiye!");
-        return;
-      }
-      let websiteLink = window.location.href; // website ka link
-      let message = "🌙✨ Eid Milad-un-Nabi Mubarak ✨🌙\n\n" +
-                    name + " ki taraf se Eid Milad-un-Nabi Mubarak 💚\n\n" +
-                    "Apne apno ko bhi share karein: " + websiteLink;
-      let url = "https://wa.me/?text=" + encodeURIComponent(message);
-      window.open(url, "_blank");
+    function shareWhatsApp(text) {
+      var url = "https://wa.me/?text=" + encodeURIComponent(text);
+      window.open(url, '_blank');
     }
-
-    // Fireworks Animation
-    const canvas = document.getElementById("fireworks");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    class Firework {
-      constructor(x, y, colors) {
-        this.x = x;
-        this.y = y;
-        this.colors = colors;
-        this.particles = [];
-        for (let i = 0; i < 50; i++) {
-          this.particles.push({
-            x: x,
-            y: y,
-            angle: Math.random() * 2 * Math.PI,
-            speed: Math.random() * 5 + 2,
-            radius: Math.random() * 2 + 1,
-            alpha: 1
-          });
-        }
-      }
-      update() {
-        this.particles.forEach(p => {
-          p.x += Math.cos(p.angle) * p.speed;
-          p.y += Math.sin(p.angle) * p.speed;
-          p.alpha -= 0.01;
-        });
-      }
-      draw(ctx) {
-        this.particles.forEach(p => {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = this.colors + Math.floor(p.alpha * 255).toString(16) + ")";
-          ctx.fill();
-        });
-      }
-    }
-
-    let fireworks = [];
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      fireworks.forEach((f, i) => {
-        f.update();
-        f.draw(ctx);
-        if (f.particles.every(p => p.alpha <= 0)) {
-          fireworks.splice(i, 1);
-        }
-      });
-      requestAnimationFrame(animate);
-    }
-
-    setInterval(() => {
-      let x = Math.random() * canvas.width;
-      let y = Math.random() * canvas.height / 2;
-      let colors = "rgba(" + 
-                   Math.floor(Math.random() * 255) + "," +
-                   Math.floor(Math.random() * 255) + "," +
-                   Math.floor(Math.random() * 255) + ",";
-      fireworks.push(new Firework(x, y, colors));
-    }, 800);
-
-    animate();
-
-    // Resize handler
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
   </script>
-  <script type='text/javascript' src='//pl27547858.revenuecpmgate.com/a5/2e/df/a52edf945c9f4c2ad7c3b8834061894b.js'></script>
 </body>
 </html>
-
