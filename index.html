@@ -12,12 +12,12 @@
       text-align: center;
       color: white;
       background: #000;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
     h1 {
       font-size: 34px;
-      margin-top: 20px;
+      margin-top: 30px;
       animation: glow 2s infinite alternate;
     }
 
@@ -75,18 +75,11 @@
       z-index: -1;
       background: radial-gradient(circle at bottom, #00111a, #000);
     }
-
-    #ad-container {
-      margin: 10px auto;
-      text-align: center;
-      background: #111;
-      padding: 5px;
-    }
   </style>
 </head>
 <body>
-  <!-- ✅ Adsterra Banner (Top) -->
-  <div id="ad-container">
+  <!-- 🔹 Adsterra Banner Top -->
+  <div id="ad-container" style="width:100%;text-align:center;margin:10px 0;">
     <script type="text/javascript">
       atOptions = {
         'key' : 'c4e90c3a3d271e04c696a0bb3100d277',
@@ -115,17 +108,16 @@
   <button onclick="shareOnWhatsApp()">📲 Share on WhatsApp</button>
 
   <script>
-    // WhatsApp Share Function
     function shareOnWhatsApp() {
       let name = document.getElementById("userName").value.trim();
       if(name === "") {
         alert("Kripya apna naam likhiye!");
         return;
       }
-      let websiteLink = window.location.href;
+      let websiteLink = window.location.href; // website ka link
       let message = "🌙✨ Eid Milad-un-Nabi Mubarak ✨🌙\n\n" +
                     name + " ki taraf se Eid Milad-un-Nabi Mubarak 💚\n\n" +
-                    "👉 Yahan se apne apno ko Mubarakbad bhejein: " + websiteLink;
+                    "Apne apno ko bhi share karein: " + websiteLink;
       let url = "https://wa.me/?text=" + encodeURIComponent(message);
       window.open(url, "_blank");
     }
