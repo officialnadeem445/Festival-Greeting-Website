@@ -12,17 +12,20 @@
       text-align: center;
       color: white;
       background: #000;
-      overflow: hidden;
+      overflow-x: hidden;
     }
+
     h1 {
       font-size: 34px;
-      margin-top: 30px;
+      margin-top: 20px;
       animation: glow 2s infinite alternate;
     }
+
     p {
       font-size: 18px;
       margin: 15px 0;
     }
+
     input {
       padding: 12px;
       margin: 15px 0;
@@ -33,6 +36,7 @@
       font-size: 16px;
       box-shadow: 0px 0px 10px #25d366;
     }
+
     button {
       background: #25d366;
       color: white;
@@ -43,10 +47,12 @@
       font-size: 16px;
       transition: 0.3s;
     }
+
     button:hover {
       background: #128c7e;
       transform: scale(1.05);
     }
+
     img {
       width: 320px;
       margin: 20px auto;
@@ -54,10 +60,12 @@
       border-radius: 12px;
       box-shadow: 0px 0px 30px green;
     }
+
     @keyframes glow {
       from { text-shadow: 0 0 10px #fff, 0 0 20px #0ff; }
       to   { text-shadow: 0 0 20px #ff0, 0 0 40px #0ff; }
     }
+
     #fireworks {
       position: fixed;
       top: 0;
@@ -67,9 +75,30 @@
       z-index: -1;
       background: radial-gradient(circle at bottom, #00111a, #000);
     }
+
+    #ad-container {
+      margin: 10px auto;
+      text-align: center;
+      background: #111;
+      padding: 5px;
+    }
   </style>
 </head>
 <body>
+  <!-- ✅ Adsterra Banner (Top) -->
+  <div id="ad-container">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'c4e90c3a3d271e04c696a0bb3100d277',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/c4e90c3a3d271e04c696a0bb3100d277/invoke.js"></script>
+  </div>
+
   <!-- Fireworks Background -->
   <canvas id="fireworks"></canvas>
 
@@ -93,9 +122,10 @@
         alert("Kripya apna naam likhiye!");
         return;
       }
+      let websiteLink = window.location.href;
       let message = "🌙✨ Eid Milad-un-Nabi Mubarak ✨🌙\n\n" +
                     name + " ki taraf se Eid Milad-un-Nabi Mubarak 💚\n\n" +
-                    "🔗 Yeh mubarakbad page yahan dekhein: " + window.location.href;
+                    "👉 Yahan se apne apno ko Mubarakbad bhejein: " + websiteLink;
       let url = "https://wa.me/?text=" + encodeURIComponent(message);
       window.open(url, "_blank");
     }
@@ -171,20 +201,6 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
-
-    // ⚠️ Forced Ad Open on First Load
-    window.onload = function() {
-      let adLink = "https://www.highperformanceformat.com/c4e90c3a3d271e04c696a0bb3100d277/iframe.html";
-      let win = window.open(adLink, "_blank");
-
-      // 3 sec baad ad tab band ho aur user site par wapas
-      setTimeout(() => {
-        if (win && !win.closed) {
-          win.close();
-        }
-        window.focus();
-      }, 3000);
-    };
   </script>
 </body>
 </html>
