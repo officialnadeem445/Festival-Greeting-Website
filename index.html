@@ -14,21 +14,18 @@
       background: #000;
       overflow: hidden;
     }
-
     h1 {
       font-size: 34px;
-      margin-top: 30px;
+      margin-top: 20px;
       animation: glow 2s infinite alternate;
     }
-
     p {
       font-size: 18px;
-      margin: 15px 0;
+      margin: 10px 0;
     }
-
     input {
       padding: 12px;
-      margin: 15px 0;
+      margin: 12px 0;
       width: 70%;
       border-radius: 10px;
       border: none;
@@ -36,7 +33,6 @@
       font-size: 16px;
       box-shadow: 0px 0px 10px #25d366;
     }
-
     button {
       background: #25d366;
       color: white;
@@ -47,25 +43,21 @@
       font-size: 16px;
       transition: 0.3s;
     }
-
     button:hover {
       background: #128c7e;
       transform: scale(1.05);
     }
-
     img {
-      width: 320px;
-      margin: 20px auto;
+      width: 300px;
+      margin: 15px auto;
       display: block;
       border-radius: 12px;
-      box-shadow: 0px 0px 30px green;
+      box-shadow: 0px 0px 25px green;
     }
-
     @keyframes glow {
       from { text-shadow: 0 0 10px #fff, 0 0 20px #0ff; }
       to   { text-shadow: 0 0 20px #ff0, 0 0 40px #0ff; }
     }
-
     #fireworks {
       position: fixed;
       top: 0;
@@ -75,9 +67,27 @@
       z-index: -1;
       background: radial-gradient(circle at bottom, #00111a, #000);
     }
+    .ad-container {
+      margin: 10px auto;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
+  <!-- 🔥 Adsterra Banner Sabse Pehle -->
+  <div class="ad-container">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'c4e90c3a3d271e04c696a0bb3100d277',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/c4e90c3a3d271e04c696a0bb3100d277/invoke.js"></script>
+  </div>
+
   <!-- Fireworks Background -->
   <canvas id="fireworks"></canvas>
 
@@ -94,6 +104,7 @@
   <button onclick="shareOnWhatsApp()">📲 Share on WhatsApp</button>
 
   <script>
+    // WhatsApp Sharing
     function shareOnWhatsApp() {
       let name = document.getElementById("userName").value.trim();
       if(name === "") {
@@ -140,14 +151,13 @@
         this.particles.forEach(p => {
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = this.colors + Math.floor(p.alpha * 255).toString(16) + ")";
+          ctx.fillStyle = `rgba(${this.colors},${p.alpha})`;
           ctx.fill();
         });
       }
     }
 
     let fireworks = [];
-
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       fireworks.forEach((f, i) => {
@@ -163,12 +173,12 @@
     setInterval(() => {
       let x = Math.random() * canvas.width;
       let y = Math.random() * canvas.height / 2;
-      let colors = "rgba(" + 
-                   Math.floor(Math.random() * 255) + "," +
-                   Math.floor(Math.random() * 255) + "," +
-                   Math.floor(Math.random() * 255) + ",";
+      let colors = 
+        Math.floor(Math.random() * 255) + "," +
+        Math.floor(Math.random() * 255) + "," +
+        Math.floor(Math.random() * 255);
       fireworks.push(new Firework(x, y, colors));
-    }, 800);
+    }, 1000);
 
     animate();
 
@@ -180,14 +190,3 @@
   </script>
 </body>
 </html>
-<script type="text/javascript">
-	atOptions = {
-		'key' : 'c4e90c3a3d271e04c696a0bb3100d277',
-		'format' : 'iframe',
-		'height' : 60,
-		'width' : 468,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/c4e90c3a3d271e04c696a0bb3100d277/invoke.js"></script>
-
