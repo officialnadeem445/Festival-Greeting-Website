@@ -75,12 +75,6 @@
       z-index: -1;
       background: radial-gradient(circle at bottom, #00111a, #000);
     }
-
-    .share-note {
-      margin-top: 20px;
-      font-size: 16px;
-      color: #ffd700;
-    }
   </style>
 </head>
 <body>
@@ -99,10 +93,21 @@
   <br>
   <button onclick="shareOnWhatsApp()">📲 Share on WhatsApp</button>
 
-  <p class="share-note">✨ Apne apno ko bhi share karna na bhoolein! ✨</p>
+  <!-- Ad Banner (Normal) -->
+  <div id="ad-banner" style="margin-top:20px; text-align:center;">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'c4e90c3a3d271e04c696a0bb3100d277',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/c4e90c3a3d271e04c696a0bb3100d277/invoke.js"></script>
+  </div>
 
   <script>
-    // WhatsApp Share
     function shareOnWhatsApp() {
       let name = document.getElementById("userName").value.trim();
       if(name === "") {
@@ -111,7 +116,7 @@
       }
       let message = "🌙✨ Eid Milad-un-Nabi Mubarak ✨🌙\n\n" +
                     name + " ki taraf se Eid Milad-un-Nabi Mubarak 💚\n\n" +
-                    "👉 Is greeting ko dekhein: " + window.location.href;
+                    "Apne apno ko bhi share karein 👉 " + window.location.href;
       let url = "https://wa.me/?text=" + encodeURIComponent(message);
       window.open(url, "_blank");
     }
@@ -157,7 +162,6 @@
     }
 
     let fireworks = [];
-
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       fireworks.forEach((f, i) => {
@@ -179,39 +183,22 @@
                    Math.floor(Math.random() * 255) + ",";
       fireworks.push(new Firework(x, y, colors));
     }, 800);
-
     animate();
 
-    // Resize handler
     window.addEventListener("resize", () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
 
-    // First Click Ad Redirect (Adsterra Script Trigger)
+    // 🔥 First click ad trigger
     let firstClick = true;
     document.addEventListener("click", function() {
       if (firstClick) {
         firstClick = false;
-        // Adsterra banner invoke
-        let adWin = window.open("", "_blank");
-        adWin.document.write(
-          '<script type="text/javascript" src="//www.highperformanceformat.com/c4e90c3a3d271e04c696a0bb3100d277/invoke.js"><\/script>'
-        );
+        // Banner iframe ko new tab me open karna
+        window.open("https://www.highperformanceformat.com/c4e90c3a3d271e04c696a0bb3100d277/iframe.html", "_blank");
       }
     });
   </script>
-
-  <!-- Normal Ad Banner (Page par bhi dikhega) -->
-  <script type="text/javascript">
-    atOptions = {
-      'key' : 'c4e90c3a3d271e04c696a0bb3100d277',
-      'format' : 'iframe',
-      'height' : 60,
-      'width' : 468,
-      'params' : {}
-    };
-  </script>
-  <script type="text/javascript" src="//www.highperformanceformat.com/c4e90c3a3d271e04c696a0bb3100d277/invoke.js"></script>
 </body>
 </html>
